@@ -35,7 +35,7 @@ const languages = [
 
 function App() {
 
-const [language, setLanguage] = useState(0)
+const [language, setLanguage] = useState(1)
 
 // utilizzo find per farmi restituire l'oggetto che cerco e lo inserisco nella card
 const selectedLanguage = languages.find(lang => lang.id === language)
