@@ -43,6 +43,11 @@ function App() {
           {language.title}
         </button>
       ))}
+      {/* creo un abbozzo di card che mostri titolo e descrizione del primo elemento */}
+      <div className="card">
+        <h3>{languages[0].title}</h3>
+        <p>{languages[0].description}</p>
+      </div>
     </>
   );
 };
