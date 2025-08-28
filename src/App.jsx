@@ -34,20 +34,27 @@ const languages = [
 ];
 
 function App() {
+
+const [language, setLanguage] = useState(0)
+
+// utilizzo find per farmi restituire l'oggetto che cerco e lo inserisco nella card
+const selectedLanguage = languages.find(lang => lang.id === language)
+
   return (
     <>
       <h1>Learn Web development</h1>
       {/* utilizzo map per creare i bottoni con title e gli assegno una key*/}
       {languages.map((language) => (
-        <button key={language.id}>
+        <button onClick={()=>setLanguage(language.id)} key={language.id}>
           {language.title}
         </button>
       ))}
       {/* creo un abbozzo di card che mostri titolo e descrizione del primo elemento */}
       <div className="card">
-        <h3>{languages[0].title}</h3>
-        <p>{languages[0].description}</p>
+        <h3>{selectedLanguage.title}</h3>
+        <p>{selectedLanguage.description}</p>
       </div>
+      
     </>
   );
 };
